@@ -1,0 +1,18 @@
+# ─── Core dependencies for E-GNO ───────────────────────────
+numpy>=1.21
+scipy>=1.7
+torch>=2.0
+pyyaml>=6.0
+
+# ─── Baselines ─────────────────────────────────────────────
+# PySINDy (SINDy baseline)
+pysindy>=1.7
+# Tensor Field Network baseline
+e3nn>=0.6
+
+# ─── Visualization & Analysis ──────────────────────────────
+matplotlib>=3.5
+seaborn>=0.12
+
+# ─── Optional: accelerated training ───────────────────────
+# torchdiffeq>=0.2      # Neural ODE (optional; we use built-in RK4)

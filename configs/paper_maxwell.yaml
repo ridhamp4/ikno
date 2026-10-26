@@ -1,0 +1,31 @@
+# ─── Paper-quality config for Maxwell experiments ───
+data_dir: dataset_generation/data
+pde_name: maxwell
+batch_size: 4
+n_nodes_subsample: 5000
+t_steps: 50
+num_workers: 4
+dt: null
+field_dim: 6
+
+model_name: egno
+hidden_channels: 64
+l_max: 1                     # verified Cartesian scalar/vector irreps
+n_scales: 3
+n_mp_layers: 2
+n_rbf: 16
+n_library_terms: 10
+lambda_sparse: 0.1
+threshold: 0.05
+n_iht_steps: 10
+iht_every: 10
+use_residual: true
+n_rollout_steps: 10
+
+n_epochs: 200
+lr: 0.001
+weight_decay: 0.00001
+eval_every: 10
+
+save_dir: checkpoints/egno_maxwell_paper
+device: auto

@@ -1,0 +1,45 @@
+.DS_Store
+.claude/
+.pytest_cache/
+.venv*/
+__pycache__/
+*.py[cod]
+
+# Generated datasets, checkpoints, and experiment outputs
+dataset_generation/data*/
+results/
+results_corrected/
+results_neurreps_extensions/
+checkpoints/
+output/
+*.npz
+*.npy
+*.pt
+*.pth
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+NeurReps_paper/paper.pdf
+NeurReps_paper/jmlr.pdf
+NeurReps_paper/tmp/
+
+# Unused JMLR template examples and class-development sources
+NeurReps_paper/example-teximage.tex
+NeurReps_paper/jmlr.dtx
+NeurReps_paper/jmlr.ins
+NeurReps_paper/jmlrbook.cls
+NeurReps_paper/pmlr-sample.bib
+NeurReps_paper/pmlr-sample.tex
+NeurReps_paper/pmrl-readme
+
+# Superseded root-level draft
+/paper.tex
+/paper.pdf
+/PUBLISHABLE_RESULT.md

@@ -1,0 +1,54 @@
+# ─── E-GNO Default Configuration ───────────────────────────────
+# Override any field via command line: --key value
+
+# ─── Data ───
+data_dir: dataset_generation/data
+pde_name: maxwell           # maxwell | navier_stokes | elasticity
+batch_size: 4
+n_nodes_subsample: 1000     # subsample nodes for training speed
+t_steps: 20                 # timesteps per trajectory
+num_workers: 0
+
+# ─── PDE-specific ───
+# dt is overridden per PDE; these are defaults
+# dt is inferred from each trajectory's saved times.
+dt: null
+field_dim: 6                 # Maxwell/elasticity: two packed 3D vectors
+
+# ─── E-GNO Architecture ───
+model_name: egno             # egno | egno_no_sindy | fno | pinn | gns | egnn | sindy
+hidden_channels: 64
+l_max: 1                     # verified scalar/vector SO(3) representations
+n_scales: 3                  # number of multi-scale graphs
+n_mp_layers: 2               # message passing layers per scale
+n_rbf: 16                    # radial basis functions
+max_neighbors: 64
+
+# ─── E-SINDy ───
+n_library_terms: 10
+lambda_sparse: 0.1
+threshold: 0.05
+n_iht_steps: 10
+iht_every: 10                # run IHT every N epochs
+
+# ─── Neural ODE ───
+use_residual: true
+n_rollout_steps: 5           # training rollout horizon
+
+# ─── Training ───
+n_epochs: 100
+lr: 0.001
+weight_decay: 0.00001
+eval_every: 5
+
+# ─── Baseline-specific ───
+hidden_dim: 128
+n_layers: 6
+r_max: 0.15
+grid_size: 32
+fno_width: 20
+fno_modes: 8
+
+# ─── Output ───
+save_dir: checkpoints
+device: auto                  # auto | cpu | cuda | cuda:0
